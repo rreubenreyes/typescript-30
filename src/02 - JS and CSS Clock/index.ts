@@ -9,9 +9,10 @@ type AnalogTimeRotation = [string, string, string]
 
 const getRotationAngle = (t: AnalogTime): AnalogTimeRotation => {
   const clockOffsetDegs: number = 90
-  const secondDegs = (t[2] * 360) / 60 + clockOffsetDegs
-  const minuteDegs = (t[1] * 360) / 60 + secondDegs / 60 + clockOffsetDegs
-  const hourDegs = (t[0] * 360) / 12 + minuteDegs / 60 + clockOffsetDegs
+  const secondDegs: number = (t[2] * 360) / 60 + clockOffsetDegs
+  const minuteDegs: number =
+    (t[1] * 360) / 60 + secondDegs / 60 + clockOffsetDegs
+  const hourDegs: number = (t[0] * 360) / 12 + minuteDegs / 60 + clockOffsetDegs
 
   return [`${hourDegs}deg`, `${minuteDegs}deg`, `${secondDegs}deg`]
 }
