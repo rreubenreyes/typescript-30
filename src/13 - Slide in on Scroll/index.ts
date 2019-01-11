@@ -4,7 +4,6 @@ import { throttle } from 'lodash'
 const images: NodeListOf<HTMLImageElement> = document.querySelectorAll(
   `.slide-in`
 )
-console.log(images)
 
 /* handlers */
 const handleScroll = throttle((): void => {
@@ -20,7 +19,6 @@ const handleScroll = throttle((): void => {
       const imgHalf: number =
         window.scrollY + window.innerHeight - image.height / 2
       const imgBottom: number = image.offsetTop + image.height
-      console.log(imgHalf)
       const halfOfImageIsShowing: boolean = imgHalf > image.offsetTop
       const imageIsNotScrolledPast: boolean = window.scrollY < imgBottom
 
