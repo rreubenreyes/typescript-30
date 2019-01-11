@@ -12,11 +12,13 @@ const items: MenuItem[] = JSON.parse(localStorage.getItem('items'))
 
 /* handlers */
 function handleSubmit(this: HTMLFormElement, e: Event): void {
-  const { item } = this
+  const {
+    item: { value }
+  } = this
   e.preventDefault()
   items.push({
     checked: false,
-    value: item.value
+    value
   })
 
   localStorage.setItem('items', JSON.stringify(items)) // sync with localStorage
